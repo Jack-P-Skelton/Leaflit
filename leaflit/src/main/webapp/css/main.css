@@ -1,0 +1,66 @@
+@charset "ISO-8859-1";
+.jumbotron {
+	background-image: url("https://wallpaperaccess.com/full/16455.jpg");
+	background-size: cover;
+}
+.wateringImg {
+	background-image: url("https://static.sciencelearn.org.nz/images/images/000/000/666/embed/OBW_TEA_ACT_01_WaterSolidLiquidGas_Fountain.jpg?1522296037");
+	background-size: cover;
+}
+body {
+	font-family: Merriweather Sans, sans-serif;
+}
+.card {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    margin-top: 10px;    
+    background-color: #8db394;    
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+}
+.card .card-custom {
+	background-color: #559690;
+}
+.card-image {
+	width: 100%;
+	aspect-ratio: 16/9;
+}      
+
+.navbar .nav-link {
+	color: #030302;
+}
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: rgb(255,255,255);
+} 
+.btn-custom {
+	background-color: #c99e9a;
+}
+.btn-custom2 {
+	background-color: #c9f288;
+}
+.btn-custom3 {
+	background-color: #918db3;
+}
+.new-custom-light-green {
+	background-color: #8db394;
+}
+.new-custom-green {
+	background-color: #49a65c;
+}
+.new-custom-gray-green {
+	background-color: #559690;
+}
+.new-custom-lime-green {
+	background-color: #c9f288;
+}
+.new-custom-bright-green {
+	background-color: #3aba2f;
+}
+.new-custom-dark-green {
+	background-color: #055c22;
+}

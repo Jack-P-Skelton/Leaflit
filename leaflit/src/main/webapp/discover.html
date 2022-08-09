@@ -1,0 +1,78 @@
+<div class="row pt-3">
+	<br><br>	
+	<div class="col-sm-6 container-fluid">
+		<div ng-show="!showCard" class="card m-5">
+			<div class="card-header text-center">
+				<h3>Discover what you can grow!</h3>
+			</div>			
+			<div class="card-body">
+			<form name="createForm">
+				<div class="form-group">
+					<label for="userInput" class="font-weight-bold">Please enter your ZipCode:</label>
+					<input ng-model="userInput" required ng-minlength="5" ng-maxlength="5" name="userInput"
+						type="text" class="form-control" id="userInput">					
+					<span ng-show="createForm.userInput.$touched && createForm.userInput.$invalid"
+						class="text-danger">
+						required and must be five characters.
+					</span>										
+				</div>				
+	 			<div class="form-group">
+					<label for="lightRequired" class="font-weight-bold">What types of light does your yard get most?</label>
+						<select ng-options="value for value in lightRequired" required name="lightRequired"
+						ng-model="plant.lightRequired" class="form-control" id="lightRequired">
+					</select>
+						<span ng-show="createForm.lightRequired.$touched && createForm.lightRequired.$invalid"
+						class="text-danger">
+						required
+					</span>
+				</div>
+				<div class="form-group">
+					<label for="gardeningTime" class="font-weight-bold">How much time are you able to spend in your garden? (per day)</label>
+					<select ng-options="value for value in gardeningTime" required name="gardeningTime"
+						ng-model="plant.gardeningTime" class="form-control" id="gardeningTime">
+					</select>
+						<span ng-show="createForm.gardeningTime.$touched && createForm.gardeningTime.$invalid"
+						class="text-danger">
+						required
+					</span>							
+				</div>		
+			</form>
+		</div> 
+		<div class="card-footer text-center">
+			<button type="button" class="btn btn-custom2"
+						ng-disabled="createForm.$invalid || disableSubmit" 
+						ng-click="getUserHardinessZone(userInput, plant.id)">
+						Submit</button>			
+			<button type="button" class="btn btn-custom3"
+						ng-click="clearDiscover()"
+				>Clear</button>
+		</div> 
+		</div>
+		<br><br><br><br>
+	</div>
+	<div ng-show="showCard">	
+		<div class="card conatiner-fluid justify-content-center">
+			<div class="card-header">
+				<h3 class="display 4 text-center">Your results from Leaflit!</h3>						
+			</div>
+			<div class="card-body new-custom-dark-green">
+				<div class="row container-fluid justify-content-center">	
+					<div class="col-lg-3 card card-custom m-3" ng-repeat="plant in plants | orderBy:'plantName' | filter:plant.lightRequired">
+						<div class="card-title text-center">
+							<h3>{{plant.plantName}}</h3>			
+						</div>	
+						<img class="img-fluid card-img-top card-image img-thumbnail"
+							src="{{plant.img}}" alt="Card image">					
+						<div class="card-body font-weight-bold">	
+							<ul>											
+								<li>Plant Type : {{plant.plantType}}</li>
+								<li>Growing Season : {{plant.growingSeason}}</li>
+								<li>Water Required : {{plant.waterRequired}}</li>
+							</ul>												
+						</div>				
+					</div>		
+				</div>
+			</div>			
+		</div>
+	</div>
+</div>

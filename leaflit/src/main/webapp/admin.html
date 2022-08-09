@@ -1,0 +1,43 @@
+<div class="card">
+	<div class="card-header">
+		<h3 class="display 4 text-center">Select a plant to update</h3>
+		<div class="row conatiner-fluid justify-content-center">
+			<button class="btn btn-custom2 m-2" ng-click="getAllPlants()">Refresh Plants</button>
+			<button class="btn btn-custom2 m-2" ng-click="goToCreateView()">Create Plant</button>			
+		</div>
+		<div class="row conatiner-fluid justify-content-center">
+			<span class="font-weight-bold">
+				<br>Search: <input type="text" maxlength="25" ng-model="searchValue">
+				<br><br>
+			</span>
+		</div>
+	</div>
+	<div class="container-fluid new-custom-dark-green">
+		<div class="row container-fluid justify-content-center">						
+			<div class="col-md-3 card card-custom m-3" ng-repeat="plant in plants | orderBy:'plantName' | filter:searchValue"
+				ng-click="goToUpdateView(plant.id)">
+				<div class="card-title">
+					<h4>Plant Name : {{plant.plantName}}</h4>			
+				</div>
+				<div>
+					<img class="img-fluid card-img-top card-image img-thumbnail"
+						src="{{plant.img}}" alt="Card image">
+				</div>	
+				<div class="card-body">			
+					<ul>					
+					<li>Hardiness Zones : {{plant.hardinessZones}}</li>						
+					<li>Plant Type : {{plant.plantType}}</li>
+					<li>Growing Season : {{plant.growingSeason}}</li>
+					<li>Light Required : {{plant.lightRequired}}</li>
+					<li>Water Required : {{plant.waterRequired}}</li>
+					<li>Plant Id : {{plant.id}}</li>
+				</ul>
+					
+				</div>				
+			</div>
+		</div>
+	</div>
+	<div class="card-footer">
+		<h3 class="display 4 text-center">Please select a plant to view</h3>
+	</div>
+</div>

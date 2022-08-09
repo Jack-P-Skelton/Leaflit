@@ -1,0 +1,91 @@
+<br><br>
+<div class="row pt-3">
+	<div class="col-sm-3">			
+	</div>
+	<div class="col-sm-6">
+		<div class="card">
+			<div class="card-header text-center">
+				<h3>Create Plant</h3>
+				<h5 class="text-success" ng-bind="createStatus"></h5>
+			</div>			
+			<div class="card-body">
+			<form name="createForm">
+				<div class="form-group">
+					<label for="plantName" class="font-weight-bold">Name:</label>
+					<input ng-model="plant.plantName" required ng-minlength="2" name="plantName"
+						type="text" class="form-control" id="plantName">					
+					<span ng-show="createForm.plantName.$touched && createForm.plantName.$invalid"
+						class="text-danger">
+						required and must be at least two characters.
+					</span>					
+				</div>
+				<div class="form-group">
+					<label for="plantType" class="font-weight-bold">Plant Type:</label>
+					<select ng-options="value for value in plantType" required name="plantType"
+						ng-model="plant.plantType" class="form-control" id="plantType">
+					</select>
+					<span ng-show="createForm.plantType.$touched && createForm.plantType.$invalid"
+						class="text-danger">
+						required
+					</span>	
+				</div>
+				<div class="form-group">
+					<label for="hardinessZones" class="font-weight-bold">Hardiness Zones:</label>
+					<input ng-model="plant.hardinessZones" required ng-minlength="2" name="hardinessZones"
+						type="text" class="form-control" id="hardinessZones">					
+					<span ng-show="createForm.hardinessZones.$touched && createForm.hardinessZones.$invalid"
+						class="text-danger">
+						required and must be at least two characters.
+					</span>
+				</div>	
+				<div class="form-group">
+					<label for="growingSeason" class="font-weight-bold">Growing Season:</label>
+					<input ng-model="plant.growingSeason" required ng-minlength="2" name="growingSeason"
+						type="text" class="form-control" id="growingSeason">					
+					<span ng-show="createForm.growingSeason.$touched && createForm.growingSeason.$invalid"
+						class="text-danger">
+						required and must be at least two characters.
+					</span>
+				</div>
+				<div class="form-group">
+					<label for="waterRequired" class="font-weight-bold">Water Required:</label>
+					<input ng-model="plant.waterRequired" required ng-minlength="2" name="waterRequired"
+						type="text" class="form-control" id="waterRequired">					
+					<span ng-show="createForm.waterRequired.$touched && createForm.waterRequired.$invalid"
+						class="text-danger">
+						required and must be at least two characters.
+					</span>
+				</div>
+				<div class="form-group">
+					<label for="lightRequired" class="font-weight-bold">Light Required:</label>
+					<input ng-model="plant.lightRequired" required ng-minlength="2" name="lightRequired"
+						type="text" class="form-control" id="lightRequired">					
+					<span ng-show="createForm.lightRequired.$touched && createForm.lightRequired.$invalid"
+						class="text-danger">
+						required and must be at least two characters.
+					</span>
+				</div>	
+				<div class="form-group">
+					<label for="img" class="font-weight-bold">Img URL:</label>
+					<input ng-model="plant.img" required ng-minlength="2" name="img"
+						type="text" class="form-control" id="img">					
+					<span ng-show="createForm.img.$touched && createForm.img.$invalid"
+						class="text-danger">
+						required and must be at least two characters.
+					</span>
+				</div>		
+			</form>
+		</div>
+		<div class="card-footer text-center">
+			<button type="button" class="btn btn-custom2"
+				ng-disabled="createForm.$invalid || disableCreate"
+				ng-click="createPlant()">Create</button>			
+			<button type="button" class="btn btn-custom3"
+				ng-click="clear()">Clear</button>
+		</div>
+		</div>
+	</div>
+	<div class="col-sm-3">			
+	</div>
+</div>
+<br><br>

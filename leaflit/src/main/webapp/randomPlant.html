@@ -1,0 +1,54 @@
+<br><br>
+<div class="card col-lg-8 conatiner-fluid justify-content-center">
+	<div class="card-header">
+		<h3 class="display 4 text-center">Click here for your random plant!</h3>
+		<div class="row conatiner-fluid justify-content-center">
+			<button class="btn btn-custom2" ng-click="getRandomPlant()">Random</button>
+		</div>						
+	</div>
+	<div ng-show="!showCard">
+		<div class="card-body new-custom-dark-green">
+			<div class="row container-fluid justify-content-center">	
+				<div class="col-lg-6 card card-custom m-4">				
+					<div class="card-title text-center">
+						<h3></h3>			
+					</div>	
+					<img class="img-fluid card-img-top card-image img-thumbnail"
+						src="./Images/Leaflit-11.png" alt="Card image">					
+					<div class="card-body font-weight-bold">	
+						<ul>						
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>												
+					</div>				
+				</div>		
+			</div>
+		</div>
+	</div>
+	
+	<div class="card-body new-custom-dark-green">
+		<div class="row container-fluid justify-content-center">	
+			<div class="col-lg-6 card card-custom m-4" ng-repeat="randomPlant in randomPlant">				
+				<div class="card-title text-center">
+					<h3>{{randomPlant.plantName}}</h3>			
+				</div>	
+				<img class="img-fluid card-img-top card-image img-thumbnail"
+					src="{{randomPlant.img}}" alt="Card image">					
+				<div class="card-body font-weight-bold">	
+					<ul>						
+						<li>Plant Type : {{randomPlant.plantType}}</li>
+						<li>Growing Season : {{randomPlant.growingSeason}}</li>
+						<li>Light Required : {{randomPlant.lightRequired}}</li>
+						<li>Water Required : {{randomPlant.waterRequired}}</li>
+					</ul>												
+				</div>				
+			</div>		
+		</div>
+	</div>
+	
+	<div class="card-footer">
+	</div>			
+</div>
+<br><br>

@@ -1,0 +1,96 @@
+<div class="row">
+	<div class="col-sm-12">
+		<div class="card card-custom2">
+			<div class="card-header text-center">
+				<h3>Update Plant</h3>
+				<h5 class="text-success text-center" ng-bind="updateStatus"></h5>
+			</div>			
+		
+			<div class="card-body">
+			<form name="updateForm">
+				<div class="form-group">
+					<label for="plantName" class="font-weight-bold">Plant Name:</label>
+					<input ng-model="plant.plantName" required ng-minlength="2" name="plantName"
+						type="text" class="form-control" id="plantName">
+						<span class="text-danger" ng-if="!updateForm.plantName.$valid">
+							Required and must be at least 2 characters
+						</span>
+				</div>
+				<div class="form-group">
+					<label for="hardinessZones" class="font-weight-bold">Hardiness Zones:</label>
+					<input ng-model="plant.hardinessZones" required ng-minlength="2" name="hardinessZones"
+						type="text" class="form-control" id="hardinessZones">
+						<span class="text-danger" ng-if="!updateForm.hardinessZones.$valid">
+							Required and must be at least 2 characters
+						</span>
+				</div>
+				<div class="form-group">
+					<label for="growingSeason" class="font-weight-bold">Growing Season:</label>
+					<input ng-model="plant.growingSeason" required ng-minlength="2" name="growingSeason"
+						type="text" class="form-control" id="growingSeason">
+						<span class="text-danger" ng-if="!updateForm.growingSeason.$valid">
+							Required and must be at least 2 characters
+						</span>
+				</div>
+				<div class="form-group">
+					<label for="waterRequired" class="font-weight-bold">Water Required:</label>
+					<input ng-model="plant.waterRequired" required ng-minlength="2" name="waterRequired"
+						type="text" class="form-control" id="waterRequired">
+						<span class="text-danger" ng-if="!updateForm.waterRequired.$valid">
+							Required and must be at least 2 characters
+						</span>
+				</div>
+				<div class="form-group">
+					<label for="lightRequired" class="font-weight-bold">Light Required:</label>
+					<input ng-model="plant.lightRequired" required ng-minlength="2" name="lightRequired"
+						type="text" class="form-control" id="lightRequired">
+						<span class="text-danger" ng-if="!updateForm.lightRequired.$valid">
+							Required and must be at least 2 characters
+						</span>
+				</div>
+				<div class="form-group">
+					<label for="plantType" class="font-weight-bold">Plant Type:</label>
+					<select ng-options="value for value in plantType"
+						ng-model="plant.plantType" class="form-control" id="plantType">
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="img" class="font-weight-bold">Img URL:</label>
+					<input ng-model="plant.img" required ng-minlength="2" name="img"
+					 type="text" class="form-control" id="img">
+					<span class="text-danger" ng-if="!updateForm.lightRequired.$valid">
+							Required and must be at least 2 characters
+					</span>				
+				</div>
+				<div>
+					<span class="font-weight-bold">Plant ID:</span> <span
+						ng-bind="plant.id" id="id"></span>
+				</div>
+				<div>
+					<span class="font-weight-bold">Create Date:</span> <span
+						ng-bind="plant.createDateTime" id="create"></span>
+				</div>
+				<div>
+					<span class="font-weight-bold">Update Date:</span> <span
+						ng-bind="plant.updateDateTime" id="update"></span>
+				</div>
+			</form>
+			</div>
+			<div class="card-footer text-center">
+				<button type="button" class="btn btn-custom2" 
+					ng-disabled="updateForm.$invalid || disableUpdate"
+					ng-click="updatePlant()">
+					Update
+				</button>
+				<button type="button" class="btn btn-danger" ng-disabled="diableUpdate"
+				ng-click="deletePlant()">
+					Delete
+				</button>
+				<button type="button" class="btn btn-custom3"
+				ng-click="goToAdminView()">
+				 Cancel
+				 </button>
+			</div>
+		</div>
+	</div>
+</div>
