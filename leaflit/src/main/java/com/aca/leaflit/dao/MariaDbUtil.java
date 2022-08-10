@@ -11,7 +11,7 @@ import java.sql.Statement;
 public class MariaDbUtil {
 
 	private static String connectionUrl =
-			"jdbc:mariadb://localhost:3306/myplants?user=root&password=Arkatie21";
+			"jdbc:mariadb://localhost:3306/myplants?user=root&password=********";
 	
 	public static Connection getConnection() {
 		Connection connection = null;
