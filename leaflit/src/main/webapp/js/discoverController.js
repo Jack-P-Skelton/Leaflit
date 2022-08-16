@@ -23,7 +23,7 @@
 										url : 'https://plant-hardiness-zone.p.rapidapi.com/zipcodes/'
 												+ userInput,
 										headers : {
-											'X-RapidAPI-Key' : 'fc25ef3badmshbc36b68a1b7aa5ap1a7794jsnf6de7625fdad',
+											'X-RapidAPI-Key' : 'YOURRAPIDAPIKEY',
 											'X-RapidAPI-Host' : 'plant-hardiness-zone.p.rapidapi.com'
 										}
 									})
